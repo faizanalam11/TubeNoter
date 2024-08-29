@@ -2,9 +2,12 @@ import Mode from "./Mode";
 import DisplayArea from "./DisplayArea";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
+import React, { useContext } from "react";
+import { OpenContext } from "../script";
 
-const Body = ({open, setOpen}) => {
+const Body = () => {
     const [ data, setData ] = useState("");
+    const { open, setOpen } = useContext(OpenContext);
 
     return (
         <div className="relative h-[90%]" onClick={() => open && setOpen(!open)}>
