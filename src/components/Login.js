@@ -18,9 +18,9 @@ const Login = () => {
         try {
             let result = await fetch('http://localhost:8002/login', {
                 method: 'POST',
+                credentials: 'include',
                 headers: { 
                     "Content-Type" : "application/json",
-                    authorization : `Bearer ${JSON.parse(localStorage.getItem('token'))}`
                 },
                 body: JSON.stringify(loginDetails)
             })
@@ -28,14 +28,19 @@ const Login = () => {
             result = await result.json();
             console.warn(result);
 
-            if(result.token){
-                localStorage.setItem('token', JSON.stringify(result.token));
+            if (result.token) {
                 setIsPending(false);
+                setEmail('');
+                setPassword('');
                 navigate('/');
-                console.log('User loggedin successfully');
+                console.log('User logged in successfully');
+            } else {
+                setIsPending(false);
+                console.error('Login failed:', result.message || 'An error occurred');
             }
         } catch (error) {
-            console.log(error);
+            console.error('Error:', error);
+            setIsPending(false);
         }
     };
 

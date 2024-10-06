@@ -1,14 +1,14 @@
 import { FaArrowAltCircleUp } from "react-icons/fa";
+import { BiSend } from "react-icons/bi";
 import { useState, useEffect } from "react";
 
 const SearchBar = ({ setData }) => {
     const [search, setSearch] = useState("");
-    const [query, setQuery] = useState("");
 
-    const getResponseNote = async (query) => {
-        console.log("Sending request with query:", query);
+    const getResponseNote = async (search) => {
+        console.log("Sending request with query:", search);
         try {
-            const response = await fetch(`http://localhost:8002/notes`, {
+            const response = await fetch(`tube-noter-backend.vercel.app`, {
                 method: "POST",
                 headers: {
                     "Accept": "text/markdown",
@@ -16,7 +16,7 @@ const SearchBar = ({ setData }) => {
                     "Authorization": `Bearer ${localStorage.getItem('token')}`,
                 },
                 body: JSON.stringify({ 
-                    url: query,
+                    url: search,
                     stream: true
                 }),
             });
@@ -55,8 +55,7 @@ const SearchBar = ({ setData }) => {
                 onKeyDown={(event) => {
                     if (event.key === 'Enter') {
                         if (search !== '') {
-                            setQuery(search);
-                            getResponseNote(query);
+                            getResponseNote(search);
                         }
                     }
                 }}
@@ -64,11 +63,10 @@ const SearchBar = ({ setData }) => {
             <button
                 className="text-white py-3 px-4 rounded-r-2xl w-[10%] bg-[#282A2C] text-3xl"
                 onClick={() => {
-                    setQuery(search);
-                    getResponseNote(query);
+                    getResponseNote(search);
                 }}
             >
-                <FaArrowAltCircleUp />
+                <BiSend className="hover:text-[rgb(11,11,12)]"/>
             </button>
         </div>
     );

@@ -13,7 +13,7 @@ const AppLayout = () => {
     const [open, setOpen] = useState(false);
     return(
         <OpenContext.Provider value={{open, setOpen}}>
-            <div className="h-[100vh] w-screen bg-[#212121]">
+            <div className="h-[100vh] w-screen bg-[rgb(11,11,12)]">
                 <Navbar/>
                 <Outlet />
             </div>
