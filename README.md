@@ -41,4 +41,5 @@ Check out the demo video here: https://youtu.be/AQcuRMs9nFE
 
 ### 📬 Contact
 Name: Faizan Alam
+
 Email: faizanalam416@gmail.com
