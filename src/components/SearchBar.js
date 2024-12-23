@@ -8,7 +8,7 @@ const SearchBar = ({ setData }) => {
     const getResponseNote = async (search) => {
         console.log("Sending request with query:", search);
         try {
-            const response = await fetch(`tube-noter-backend.vercel.app`, {
+            const response = await fetch(`http://localhost:8002/notes`, {
                 method: "POST",
                 headers: {
                     "Accept": "text/markdown",

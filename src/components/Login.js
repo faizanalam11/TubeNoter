@@ -46,8 +46,10 @@ const Login = () => {
 
     return (
         <div>
-            <p className="mb-1 text-center text-2xl font-semibold text-white">Welcome back</p>
-            <p className="mb-6 text-center text-lg text-token-text-secondary text-white">Log in or sign up to get compiled notes from youtube links</p>
+            <div className='m-2'>
+                <h1 className="p-2 text-center text-2xl font-extrabold text-white">Log into TubeNoter</h1>
+                <p className="mb-6 text-center text-lg text-token-text-secondary text-white">Log in or sign up to get compiled notes from youtube links</p>
+            </div>
 
             <h1 className='text-white text-center text-lg m-1 font-semibold'>Login</h1>
             <form action='POST' className='m-auto w-2/6 gap-2 flex flex-col' onSubmit={submit}>
