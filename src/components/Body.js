@@ -9,8 +9,8 @@ const Body = () => {
     const { open, setOpen } = useContext(OpenContext);
 
     return (
-        <div className="relative h-[90%]" onClick={() => open && setOpen(!open)}>
-            <div className="w-7/12 h-5/6 flex flex-col mx-auto my-2 p-2 gap-2 justify-evenly">
+        <div className="relative h-[85vh] flex bg-[#171717]" onClick={() => open && setOpen(!open)}>
+            <div className="w-7/12 h-5/6 flex flex-col mx-auto p-2 gap-2 justify-evenly my-auto">
                 <DisplayArea data = {data}/>
                 <SearchBar data = {data} setData = {setData}/>
             </div>
