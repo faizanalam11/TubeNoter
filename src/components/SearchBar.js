@@ -8,7 +8,7 @@ const SearchBar = ({ setData }) => {
     const getResponseNote = async (search) => {
         console.log("Sending request with query:", search);
         try {
-            const response = await fetch(`http://localhost:8002/notes`, {
+            const response = await fetch(`https://tubenoter.onrender.com/notes`, {
                 method: "POST",
                 headers: {
                     "Accept": "text/markdown",
