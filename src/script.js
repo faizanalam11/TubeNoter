@@ -1,5 +1,6 @@
 import React, { useState, useContext, createContext } from "react";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { jsPDF } from "jspdf";
 import ReactDOM from "react-dom/client";
 import Body from "./components/Body";
 import Navbar from "./components/Navbar";
@@ -11,6 +12,7 @@ export const OpenContext = createContext();
 
 const AppLayout = () => {
     const [open, setOpen] = useState(false);
+
     return(
         <OpenContext.Provider value={{open, setOpen}}>
             <div className="h-[100vh] w-full bg-[#171717]">

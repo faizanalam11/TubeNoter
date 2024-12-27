@@ -45,7 +45,7 @@ const SearchBar = ({ setData }) => {
     };
 
     return (
-        <div className="w-full p-2 justify-center flex">
+        <div className="w-full md:p-2 justify-center flex">
             <input
                 type="text"
                 className="text-white py-3 px-4 rounded-l-2xl w-[90%] bg-[#282A2C] outline-0"
@@ -61,7 +61,7 @@ const SearchBar = ({ setData }) => {
                 }}
             />
             <button
-                className="text-white py-3 px-4 rounded-r-2xl w-[10%] bg-[#282A2C] text-3xl"
+                className="text-white md:py-3 md:px-4 rounded-r-2xl w-[10%] bg-[#282A2C] text-xl md:text-3xl"
                 onClick={() => {
                     getResponseNote(search);
                 }}
