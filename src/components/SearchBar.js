@@ -8,7 +8,7 @@ const SearchBar = ({ setData }) => {
     const getResponseNote = async (search) => {
         console.log("Sending request with query:", search);
         try {
-            const response = await fetch(`https://tubenoter.onrender.com/notes`, {
+            const response = await fetch(`http://localhost:8002/notes`, {
                 method: "POST",
                 headers: {
                     "Accept": "text/markdown",
@@ -49,7 +49,7 @@ const SearchBar = ({ setData }) => {
             <input
                 type="text"
                 className="text-white py-3 px-4 rounded-l-2xl w-[90%] bg-[#282A2C] outline-0"
-                placeholder="Paste link here..."
+                placeholder="Paste YouTube video URL here..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 onKeyDown={(event) => {
